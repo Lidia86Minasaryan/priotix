@@ -128,7 +128,8 @@ class Result extends Component {
                             <i className="leftArrow">
                                 <img src={left_arrow_icon} alt="" onClick={this.goBack}/>
                             </i>
-                            <input id='search' autoFocus autocomplete="off" type="text" onChange={event => this.search(event)} value={this.state.search}/>
+                            <input id='search' autoFocus autoComplete="off" type="text"
+                                   onChange={event => this.search(event)} value={this.state.search}/>
                             <i className="crossIcon">
                                 <img src={cross_icon} alt="" onClick={this.clean}/>
                             </i>
@@ -149,7 +150,10 @@ class Result extends Component {
                      <div className="empty">
                     <p> Not Found Players </p> </div> : null}
                     {this.state.results.map((item, index) =>
-                        <div className="items" key={index}>
+                        <div className="items" key={index}
+                             onClick={() => {if (item.checked === true) {
+                                 if (window.confirm('Do you want to uncheck?')) this.changeCheckMark(item.id, false)
+                             } else {this.changeCheckMark(item.id, true)}}}>
                             <div className="row ">
                                 <div className="column small-8">
                                     <div>
@@ -170,8 +174,8 @@ class Result extends Component {
                                     <div className="name">
                                         <span>{item.nick_name}</span>
                                         {item.checked === false ?
-                                            <img src={check_icon} alt="check" onClick={() => this.changeCheckMark(item.id, true)}/>
-                                            :  <img src={check_mark_icon} alt="check" onClick={() => {if (window.confirm('Do you want to uncheck?')) this.changeCheckMark(item.id, false) }}/>}
+                                            <img src={check_icon} alt="check" />
+                                            :  <img src={check_mark_icon} alt="check" />}
                                         <div className="firstName">
                                             {item.first_name ?
                                                 <span> {item.first_name} </span> : null}

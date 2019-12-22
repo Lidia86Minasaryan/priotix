@@ -57,7 +57,7 @@ class Search extends Component {
             <div className="row align-justify align-middle">
                 <div className="column">
                     <div className="search form-input">
-                        <input id='search' type="text" onChange={event => this.search()} autocomplete="off"/>
+                        <input id='search' type="text" onChange={event => this.search()} autoComplete="off"/>
                         <i>
                             <img src={search_icon} alt=""
                                  onClick={this.search}/>
