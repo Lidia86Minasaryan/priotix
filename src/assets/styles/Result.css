@@ -1,0 +1,114 @@
+.results {
+    width: 300px;
+    margin: 0 auto;
+}
+.result{
+    background-color: #2DBBD8;
+    height: 50px;
+    position: relative;
+}
+.result .leftArrow {
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    margin-top: 10px;
+}
+.result img {
+    width: 20px;
+    height: 20px;
+}
+.result p {
+    margin-left: 50px;
+    padding-top: 10px;
+    color: white;
+}
+.result .crossIcon {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    margin-top: 10px;
+}
+
+.players {
+    background-color: #f5f5f5;
+    width: 300px;
+    margin: 0 auto;
+    height: 30px;
+}
+.players p {
+    color: darkgray;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-top: 0px;
+}
+.items {
+    clear: both;
+    border-bottom: 1px solid #CACCCF;
+    height: 60px;
+}
+.avatar {
+    background-color: black;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    float: left;
+    /*margin-top: 10px;*/
+}
+.avatar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+
+}
+.defaultImage {
+    background-color: #f5f5f5;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    float: left;
+    /*margin-top: 10px;*/
+}
+.defaultImage p {
+    color: darkgray;
+    margin-left: 10px;
+}
+.name {
+    margin-top: 10px;
+    width: 300px;
+    font-weight: bold;
+    /*border-bottom: 1px solid #CACCCF;*/
+    /*padding-bottom: 15px;*/
+}
+.name span {
+    padding-left: 10px;
+}
+.name .firstName {
+    font-weight: normal;
+    color: #C1C5C9;
+}
+.checkbox {
+    float: right;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.name img {
+    width: 20px;
+    height: 20px;
+    padding-top: 10px;
+    float: right
+}
+
+.empty {
+    margin: 0 auto;
+    width: 300px;
+
+}
+.empty p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
