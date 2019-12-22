@@ -7,6 +7,16 @@
     height: 50px;
     position: relative;
 }
+.result #search {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    background: #2DBBD8;
+    color: white;
+    border: none;
+    height:48px;
+    outline: none;
+}
 .result .leftArrow {
     position: absolute;
     top: 2px;

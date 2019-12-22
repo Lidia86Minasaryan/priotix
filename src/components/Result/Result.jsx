@@ -5,6 +5,7 @@ import cross_icon from '../../assets/img/close.svg';
 import check_icon from '../../assets/img/check.svg';
 import check_mark_icon from '../../assets/img/check-mark.svg';
 import Search from '../Search/Search';
+import Api from "../../modules/Api";
 
 class Result extends Component {
 
@@ -15,6 +16,7 @@ class Result extends Component {
             results: [],
             goBack: false,
             clean: false,
+            search: this.props.search,
         }
 
         this.goBack = this.goBack.bind(this);
@@ -67,11 +69,54 @@ class Result extends Component {
             clean: true,
         });
     }
-    render() {
-        let search = this.props.search;
+    search(e) {
+        let searchString = e.target.value;
 
+        this.setState( {
+            search: searchString,
+        });
+
+        if (searchString.length >= 2) {
+
+            Api.apiCall('get', 'search', {
+                q: searchString,
+                index: 'player'
+            }).then(resp => {
+                if (resp.status !== 200) {
+                    console.log(resp.status);
+                }
+                if ('error' in resp.data) {
+                    console.log(resp.data.error);
+                } else {
+                    if (resp.data.length > 0) {
+                        this.setState(() => ({
+                            results: resp.data[0].documents.map((item) => {
+                                if (this.ids.indexOf(item.id) > -1) {
+                                    item.checked = true;
+                                } else {
+                                    item.checked = false;
+                                }
+                                return item;
+                            })
+                        }));
+                    } else {
+                        this.setState({
+                            results: []
+                        })
+                    }
+                }
+            }).catch(e => {
+                console.log(e);
+            })
+        } else {
+            this.setState({
+                results: [],
+            });
+        }
+    }
+    render() {
         if (this.state.goBack) {
-            return <Search search={search}/>
+            return <Search search={this.state.search}/>
         } else if (this.state.clean) {
             return <Search search={""}/>
         }
@@ -83,9 +128,7 @@ class Result extends Component {
                             <i className="leftArrow">
                                 <img src={left_arrow_icon} alt="" onClick={this.goBack}/>
                             </i>
-                            <p>
-                                {search}
-                            </p>
+                            <input id='search' autoFocus autocomplete="off" type="text" onChange={event => this.search(event)} value={this.state.search}/>
                             <i className="crossIcon">
                                 <img src={cross_icon} alt="" onClick={this.clean}/>
                             </i>
@@ -102,7 +145,7 @@ class Result extends Component {
                     </div>
                 </div>
                 <div>
-                    {this.props.data.length === 0 ?
+                    {this.state.results.length === 0 ?
                      <div className="empty">
                     <p> Not Found Players </p> </div> : null}
                     {this.state.results.map((item, index) =>

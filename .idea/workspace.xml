@@ -45,11 +45,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576999758269</updated>
-      <workItem from="1576999787827" duration="1694000" />
+      <workItem from="1576999787827" duration="2310000" />
+      <workItem from="1577017066271" duration="4873000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1577015048405">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="115" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1577015048405" />
+    <state width="1259" height="176" key="GridCell.Tab.0.bottom" timestamp="1577015074126">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1577015074126" />
+    <state width="1259" height="176" key="GridCell.Tab.0.center" timestamp="1577015074126">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1577015074126" />
+    <state width="1259" height="176" key="GridCell.Tab.0.left" timestamp="1577015074126">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1577015074126" />
+    <state width="1259" height="176" key="GridCell.Tab.0.right" timestamp="1577015074126">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1259" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1577015074126" />
   </component>
 </project>
